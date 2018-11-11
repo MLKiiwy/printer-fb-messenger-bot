@@ -1,0 +1,10 @@
+{
+  "rootDir": "../src",
+  "transformIgnorePatterns": ["node_modules/"],
+  "reporters": ["default", "jest-junit"],
+  "coverageDirectory": "../coverage",
+  "testURL": "http://localhost/",
+  "testMatch": [
+    "**/*.steps.js"
+  ]
+}
