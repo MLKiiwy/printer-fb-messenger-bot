@@ -7,4 +7,9 @@ const client = axios.create({
   adapter,
 });
 
-export default client;
+export default async message =>
+  client.request({
+    method: 'POST',
+    url: 'api/messages',
+    data: { content: message },
+  });
