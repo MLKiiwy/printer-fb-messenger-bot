@@ -16,6 +16,9 @@
     "commitmsg": "commitlint --config ./config/commitlint.config.js -E GIT_PARAMS",
     "localtunnel": "lt --port 3005"
   },
+  "engines": {
+    "node": "8.x"
+  },
   "lint-staged": {
     "*.js": [
       "eslint"
