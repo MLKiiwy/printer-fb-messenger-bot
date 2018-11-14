@@ -190,3 +190,4 @@ Temporary Items
 # Custom
 dist/
 junit.xml
+.env

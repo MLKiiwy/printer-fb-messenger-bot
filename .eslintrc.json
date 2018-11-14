@@ -2,21 +2,17 @@
   "parser": "babel-eslint",
   "extends": [
     "eslint:recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended",
-    "plugin:react/recommended"
+    "plugin:prettier/recommended"
   ],
-  "plugins": ["jest", "jsx-a11y", "prettier", "react"],
+  "plugins": ["jest", "prettier"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
-      "jsx": true,
       "modules": true
     }
   },
   "env": {
-    "browser": true,
     "es6": true,
     "jest": true,
     "node": true
@@ -28,11 +24,10 @@
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "jest/no-disabled-tests": "error",
     "jest/no-focused-tests": "error",
-    "jest/no-identical-title": "warn",
+    "jest/no-identical-title": "error",
     "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
     "prettier/prettier": "error",
     "quotes": ["error", "single"],
-    "react/prop-types": "off",
     "space-before-function-paren": [
       "error",
       {
