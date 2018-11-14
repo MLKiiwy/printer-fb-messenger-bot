@@ -4,7 +4,8 @@
   "author": "Mikael Labrut",
   "scripts": {
     "analyze": "source-map-explorer dist/static/js/main.*",
-    "start": "nodemon src/index.js --exec babel-node",
+    "start:dev": "nodemon src/index.js --exec babel-node",
+    "start": "babel-node src/index.js",
     "prebuild": "rm -rf dist",
     "build": "babel src/index.js --out-file ./dist/index.js",
     "test": "jest --config ./config/jest.config.json --color --runInBand",
