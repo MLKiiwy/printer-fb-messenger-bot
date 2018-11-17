@@ -1,0 +1,36 @@
+stages:
+  - install
+  - test
+
+install:
+  stage: install
+  image: node:carbon-alpine
+  cache:
+    paths:
+      - node_modules/*
+  script:
+    - yarn install
+
+test:
+  stage: test
+  image: node:carbon-alpine
+  cache:
+    paths:
+      - node_modules/*
+  variables:
+    JEST_JUNIT_OUTPUT: ./test-results/jest/junit.xml
+  script:
+    - cp ./src/env.js.example ./src/env.js
+    - mkdir -p ./test-results/jest
+    - mkdir -p ./test-results/eslint
+    - yarn -s lint -f junit > ./test-results/eslint/junit.xml
+    - yarn test --ci --reporters=default --reporters=jest-junit --coverage --runInBand
+  artifacts:
+    when: on_failure
+    reports:
+      junit: [./test-results/eslint/junit.xml, ./test-results/jest/junit.xml]
+    paths:
+      - ./test-results
+    expire_in: 5 days
+  dependencies:
+    - install
