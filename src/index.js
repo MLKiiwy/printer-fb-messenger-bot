@@ -3,7 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import printer from './printer';
+import print from './printer-rest-api/print';
 
 if (process.env.NODE_ENV !== 'production') {
   dotenv.load();
@@ -30,7 +30,7 @@ app.post('/webhook', async function(req, res) {
         message: { text },
       } = webhook_event;
 
-      printer(text);
+      print(text);
     });
 
     // Return a '200 OK' response to all events

@@ -10,7 +10,7 @@
     "preinstall": "cp .env.example .env",
     "postinstall": "yarn prebuild && yarn build",
     "build": "babel -d ./dist ./src",
-    "test": "jest --config ./config/jest.config.json --color --runInBand",
+    "test": "jest --config ./config/jest.config.json --color",
     "test:watch": "jest --config ./config/jest.config.json --watch",
     "precommit": "lint-staged",
     "lint": "eslint .",
