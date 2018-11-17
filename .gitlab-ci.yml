@@ -20,7 +20,7 @@ test:
   variables:
     JEST_JUNIT_OUTPUT: ./test-results/jest/junit.xml
   script:
-    - cp ./src/env.js.example ./src/env.js
+    - yarn preinstall
     - mkdir -p ./test-results/jest
     - mkdir -p ./test-results/eslint
     - yarn -s lint -f junit > ./test-results/eslint/junit.xml
