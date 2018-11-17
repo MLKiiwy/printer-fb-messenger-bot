@@ -5,6 +5,7 @@
   "coverageDirectory": "../coverage",
   "testURL": "http://localhost/",
   "testMatch": [
-    "**/*.steps.js"
+    "**/*.steps.js",
+    "**/*.test.js"
   ]
 }
